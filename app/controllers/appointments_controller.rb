@@ -6,7 +6,12 @@ class AppointmentsController < ApplicationController
 
   def create
     Appointment.create(appointment_params)
-    @appointments = Appointment.order(time: :desc)
+    render json: Appointment.order(time: :desc)
+  end
+
+  def destroy
+    Appointment.find(params[:id]).try(:destroy)
+    render json: Appointment.order(time: :desc)
   end
 
   private

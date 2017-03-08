@@ -1,1 +1,1 @@
-|  $('#appointments').html("#{ escape_javascript(render 'appointments') }");
+| $('[data-id=AppointmentsList]').html("#{ react_component('AppointmentsList', appointments: @appointments ) }");
