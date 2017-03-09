@@ -1,7 +1,14 @@
 class AppointmentsController < ApplicationController
   def index
-    @appointments = Appointment.order(time: :desc)
-    @appointment = Appointment.new
+    respond_to do |format|
+       format.json { render json: Appointment.order(time: :desc) }
+
+       format.html do
+         @appointments = Appointment.order(time: :desc)
+         @appointment = Appointment.new
+       end
+    end
+
   end
 
   def create
