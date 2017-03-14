@@ -1,10 +1,10 @@
 class AppointmentsController < ApplicationController
   def index
     respond_to do |format|
-       format.json { render json: Appointment.order(time: :desc) }
+       format.json { render json: Appointment.order(time: :asc) }
 
        format.html do
-         @appointments = Appointment.order(time: :desc)
+         @appointments = Appointment.order(time: :asc)
          @appointment = Appointment.new
        end
     end
@@ -13,12 +13,12 @@ class AppointmentsController < ApplicationController
 
   def create
     Appointment.create(appointment_params)
-    render json: Appointment.order(time: :desc)
+    render json: Appointment.order(time: :asc)
   end
 
   def destroy
     Appointment.find(params[:id]).try(:destroy)
-    render json: Appointment.order(time: :desc)
+    render json: Appointment.order(time: :asc)
   end
 
   private

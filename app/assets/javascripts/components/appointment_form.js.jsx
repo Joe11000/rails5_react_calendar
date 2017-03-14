@@ -12,19 +12,32 @@ var AppointmentForm = React.createClass({
     this.props.onFormSubmit();
   },
 
+  setTime: function(e){
+    this.props.onUserInput({ time: e.toISOString() });
+  },
+
   render: function() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input name="title" placeholder={"Title"}
-                 value={this.props.title}
-                 onChange={this.handleChange} />
+          <fieldset>
+            <legend>Make Appointment</legend>
 
-          <input name="time" placeholder='Date and Time'
-                 value={this.props.time}
-                 onChange={this.handleChange}/>
+            <div className='form-group'>
+              <label htmlFor="title">Title</label>
+              <input id='title' name="title" placeholder={"Title"}
+                   value={this.props.title}
+                   onChange={this.handleChange} />
+            </div>
 
-          <input type="submit" value="Make Appointment" />
+            <div className='form-group'>
+              <label htmlFor="time">Time</label>
+              <Datetime defaultValue={moment()} onChange={this.setTime} open={true} input={false} />
+            </div>
+
+            <input type="submit" value="create" />
+          </fieldset>
+
         </form>
       </div>
     )
