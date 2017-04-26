@@ -3,7 +3,7 @@ var AppointmentsList = React.createClass({
     var that = this
 
     return (
-      <div data-id="AppointmentsList">
+      <div>
         <fieldset>
           <legend>({this.props.appointments.length}) Future Appointments</legend>
 
@@ -11,6 +11,8 @@ var AppointmentsList = React.createClass({
                               max_time={this.props.max_time}
                               handleDatetimeFilterUpdate={this.props.handleDatetimeFilterUpdate}/>
 
+
+          <div className='appointments-list' id='appointments-list'>
           {that.props.appointments.map(function(appointment) {
             return (
               <Appointment appointment={appointment}
@@ -20,6 +22,7 @@ var AppointmentsList = React.createClass({
                            max_time={that.props.max_time} />
             )
           })}
+          </div>
         </fieldset>
 
       </div>

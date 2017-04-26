@@ -1,6 +1,7 @@
 - content_for :head do
   = stylesheet_link_tag 'appointments'
 
-h1 React Calendar
+.appointments-page
+  h1 React Calendar
 
-= react_component 'Appointments', appointments: @appointments
+  = react_component 'Appointments', appointments: @appointments

@@ -28,7 +28,7 @@ var Appointment = React.createClass({
     }
 
     return (
-      <div className={ "appointment " + (this.shouldDisplayAppointment() ? '' : 'hidden') }>
+      <div className={ "appointment " + (this.shouldDisplayAppointment() ? '' : 'hidden') } data-class='appointment'>
         { addStarIfAppointmentIsToday() }
         <p className='appointment-title'>{this.props.appointment.title}</p>
         <p className='appointment-time'>{ formatDate(this.props.appointment.time) }</p>

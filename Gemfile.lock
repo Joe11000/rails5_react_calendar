@@ -47,6 +47,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
     arel (7.1.4)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -63,6 +65,10 @@ GEM
       xpath (~> 2.0)
     childprocess (0.6.2)
       ffi (~> 1.0, >= 1.0.11)
+    chromedriver-helper (1.0.0)
+      archive-zip (~> 0.7.0)
+      nokogiri (~> 1.6)
+    cliver (0.3.2)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -85,6 +91,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.1)
+    io-like (0.3.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -110,6 +117,10 @@ GEM
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     pg (0.19.0)
+    poltergeist (1.14.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      websocket-driver (>= 0.2.0)
     public_suffix (2.0.5)
     puma (3.7.1)
     rack (2.0.1)
@@ -222,6 +233,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
+  chromedriver-helper
   coffee-rails (~> 4.2)
   factory_girl_rails
   jbuilder (~> 2.5)
@@ -229,6 +241,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   momentjs-rails (~> 2.9)!
   pg (~> 0.18)
+  poltergeist
   puma (~> 3.0)
   rails (~> 5.0.2)
   react-rails
